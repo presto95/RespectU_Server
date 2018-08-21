@@ -18,8 +18,6 @@ app.use("/tip", require("./data/tip/router"))
 
 app.listen(3000, () => {
     database()
-    let a = require("./initialize/tip")
-    a()
     console.log("3000번 포트에서 서버 실행중...")
 })
 

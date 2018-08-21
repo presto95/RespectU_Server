@@ -1,4 +1,5 @@
 const mongoose = require("mongoose")
+//서버 배포하면 url 변경
 const mongoDBUrl = "mongodb://localhost:27017/respectu"
 
 module.exports = () => {
