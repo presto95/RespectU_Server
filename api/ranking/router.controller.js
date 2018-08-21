@@ -1,4 +1,4 @@
-const Ranking = require("./rankingModel")
+const Ranking = require("./ranking")
 
 //CREATE
 function upload(req, res) {

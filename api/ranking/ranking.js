@@ -9,5 +9,8 @@ const schema = new mongoose.Schema({
     perfectPlay: Number,
     createdAt: { type: Number, index: { unique: false }, "default": Date.now },
     updatedAt: { type: Number, index: { unique: false }, "default": Date.now }
+}, {
+    versionKey: false
 })
+
 module.exports = mongoose.model("ranking", schema)
