@@ -10,11 +10,11 @@ app.use("/user", require("./api/user/router"))
 app.use("/ranking", require("./api/ranking/router"))
 app.use("/playlist", require("./api/user/playlist/router"))
 //가져오기만 하는 데이터
-app.use("/song", require("./api/data/achievement/router"))
-app.use("/mission", require("./api/data/mission/router"))
-app.use("/trophy", require("./api/data/trophy/router"))
-app.use("/achievement", require("./api/data/achivement/router"))
-app.use("/tip", require("./api/data/tip/router"))
+app.use("/song", require("./data/achievement/router"))
+app.use("/mission", require("./data/mission/router"))
+app.use("/trophy", require("./data/trophy/router"))
+app.use("/achievement", require("./data/achievement/router"))
+app.use("/tip", require("./data/tip/router"))
 
 app.listen(3000, () => {
     database()

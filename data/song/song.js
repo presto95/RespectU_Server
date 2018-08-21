@@ -1,9 +1,11 @@
 const mongoose = require("mongoose")
 
 const buttonSchema = new mongoose.Schema({
-    normal: Number,
-    hard: Number,
-    maximum: Number
+    normal: { type: Number, default: 0, max: 15 },
+    hard: { type: Number, default: 0, max: 15 },
+    maximum: { type: Number, default: 0, max: 15 }
+}, {
+    versionKey: false
 })
 
 const schema = new mongoose.Schema({
@@ -16,6 +18,8 @@ const schema = new mongoose.Schema({
     button5: buttonSchema,
     button6: buttonSchema,
     button8: buttonSchema
+}, {
+    versionKey: false
 })
 
 module.exports = mongoose.model("song", schema)
