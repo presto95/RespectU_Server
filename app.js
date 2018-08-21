@@ -5,7 +5,7 @@ const database = require("./database")
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-//유저정보(성과기록) / 랭킹 / 플레이리스트
+//유저정보, 성과기록 / 랭킹 / 플레이리스트
 app.use("/user", require("./api/user/router"))
 app.use("/ranking", require("./api/ranking/router"))
 app.use("/playlist", require("./api/user/playlist/router"))
@@ -18,6 +18,8 @@ app.use("/tip", require("./data/tip/router"))
 
 app.listen(3000, () => {
     database()
+    let a = require("./initialize/tip")
+    a()
     console.log("3000번 포트에서 서버 실행중...")
 })
 
