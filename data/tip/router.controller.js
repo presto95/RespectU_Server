@@ -7,9 +7,8 @@ function read(req, res) {
         }
         if(tips) {
             return res.status(200).json(tips)
-        } else {
-            return res.status(404).json({ error: "no data" })
         }
+        return res.status(404).json({ error: "no data" })
     })
 }
 
