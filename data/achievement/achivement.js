@@ -1,10 +1,15 @@
 const mongoose = require("mongoose")
 
+const languageSchema = new mongoose.Schema({
+    english: { type: String, required: true },
+    korean: { type: String, required: true }
+})
+
 const schema = new mongoose.Schema({
-    title: { type: String, required: true },
+    section: languageSchema,
     level: { type: Number, required: true, max: 10 },
     type: { type: String, default: "" },
-    item: { type: String, default: "" }
+    item: languageSchema
 }, {
     versionKey: false
 })

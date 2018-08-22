@@ -29,7 +29,7 @@ function upload(req, res) {
                     if(err) {
                         return res.status(400).json({ error: "unknown error" })
                     }
-                    return res.sendStatus(200)
+                    return res.sendStatus(201)
                 })
             } else if(length === 1) {
                 console.log("update")
@@ -43,10 +43,10 @@ function upload(req, res) {
 }
 
 //READ
-function fetch(req, res) {
+function read(req, res) {
     Ranking.find({}, (err, results) => {
         if(err) {
-            return res.status(404).json({ error: "no data" })
+            return res.status(400).json({ error: "unknown error" })
         }
         if(results) {
             return res.json(results)
@@ -79,4 +79,4 @@ function update(req, res) {
     })
 }
 
-module.exports = { fetch, upload }
+module.exports = { read, upload }

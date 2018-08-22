@@ -1,5 +1,10 @@
 const mongoose = require("mongoose")
 
+const languageSchema = new mongoose.Schema({
+    english: { type: String, required: true },
+    korean: { type: String, required: true }
+})
+
 const difficultySchema = new mongoose.Schema({
     rank: { type: String, default: "" },
     rate: { type: Number, default: 0, min: 0, max: 100 },
@@ -22,7 +27,7 @@ const buttonSchema = new mongoose.Schema({
 })
 
 const recordSchema = new mongoose.Schema({
-    title: { type: String, required: true, unique: true },
+    title: languageSchema,
     lowercase: { type: String, required: true },
     series: { type: String, required: true },
     button4: buttonSchema,

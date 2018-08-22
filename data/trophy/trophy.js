@@ -1,17 +1,16 @@
 const mongoose = require("mongoose")
 
-const trophySchema = new mongoose.Schema({
-    title: { type: String, required: true },
-    content: { type: String, required: true }
-}, {
-    versionKey: false
+const languageSchema = new mongoose.Schema({
+    english: { type: String, required: true },
+    korean: { type: String, required: true }
 })
 
 const schema = new mongoose.Schema({
     series: { type: String, required: true },
     rating: { type: String, required: true },
-    korean: trophySchema,
-    english: trophySchema,
+    image: { type: String, required: true },
+    title: languageSchema,
+    content: languageSchema
 }, {
     versionKey: false
 })

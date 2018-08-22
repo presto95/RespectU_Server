@@ -11,7 +11,6 @@ const buttonSchema = new mongoose.Schema({
 const schema = new mongoose.Schema({
     uid: { type: String, required: true },
     title: { type: String, required: true, unique: true },
-    lowercase: { type: String, required: true },
     series: { type: String, required: true },
     composer: { type: String, required: true },
     bpm: { type: String, required: true },

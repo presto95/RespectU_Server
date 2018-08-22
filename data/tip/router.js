@@ -2,6 +2,6 @@ const express = require("express")
 const router = express.Router()
 const controller = require("./router.controller")
 
-router.route("/", controller.fetch)
+router.get("/", controller.read)
 
 module.exports = router
