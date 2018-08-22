@@ -2,7 +2,7 @@ const Trophy = require("./trophy")
 
 function read(req, res) {
     const series = req.params.series
-    Trophy.find({ series }, (err, trophies) => {
+    Trophy.find({ series }, { "_id": false, "title._id": false, "content._id": false }, (err, trophies) => {
         if(err) {
             return res.status(400).json({ error: "unknown error "})
         }

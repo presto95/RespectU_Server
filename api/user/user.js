@@ -1,5 +1,11 @@
 const mongoose = require("mongoose")
 
+const playlistSchema = new mongoose.Schema({
+    title: { type: String, required: true, unique: true }
+}, {
+    versionKey: false
+})
+
 const languageSchema = new mongoose.Schema({
     english: { type: String, required: true },
     korean: { type: String, required: true }
@@ -9,7 +15,6 @@ const difficultySchema = new mongoose.Schema({
     rank: { type: String, default: "" },
     rate: { type: Number, default: 0, min: 0, max: 100 },
     note: { type: String, default: "" },
-    level: { type: Number, default: 0, max: 15 }
 }, {
     versionKey: false
 })
@@ -42,6 +47,7 @@ const schema = new mongoose.Schema({
     uid: { type: String, required: true, unique: true },
     nickname: { type: String, required: true },
     password: { type: String, required: true },
+    playlist: [playlistSchema],
     record: [recordSchema]
 }, {
     versionKey: false

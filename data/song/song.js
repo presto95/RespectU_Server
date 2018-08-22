@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 
 const languageSchema = new mongoose.Schema({
     english: { type: String, required: true },
-    korean: { type: String, required: true }
+    korean: String
 })
 
 const buttonSchema = new mongoose.Schema({
@@ -15,14 +15,15 @@ const buttonSchema = new mongoose.Schema({
 
 const schema = new mongoose.Schema({
     title: languageSchema,
-    lowercase: { type: String, required: true },
+    lowercase: languageSchema,
     series: { type: String, required: true },
     composer: { type: String, required: true },
-    bpm: { type: String, required: true },
-    button4: buttonSchema,
-    button5: buttonSchema,
-    button6: buttonSchema,
-    button8: buttonSchema
+    bpm: { type: Number, required: true },
+    subBpm: { type: Number, default: 0 },
+    button4: { type: buttonSchema, required: true },
+    button5: { type: buttonSchema, required: true },
+    button6: { type: buttonSchema, required: true },
+    button8: { type: buttonSchema, required: true }
 }, {
     versionKey: false
 })

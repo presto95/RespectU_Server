@@ -1,7 +1,7 @@
 const Achievement = require("./achivement")
 
 function read(req, res) {
-    Achievement.find({}, (err, achievements) => {
+    Achievement.find({}, { "_id": false, "section._id": false, "item._id": false }, (err, achievements) => {
         if(err) {
             return res.status(400).json({ error: "unknown error" })
         }
@@ -14,7 +14,7 @@ function read(req, res) {
 
 function readByType(req, res) {
     const type = req.params.type
-    Achievement.find({ type }, (err, achievements) => {
+    Achievement.find({ type }, { "_id": false, "section._id": false, "item._id": false }, (err, achievements) => {
         if(err) {
             return res.status(400).json({ error: "unknown error" })
         }

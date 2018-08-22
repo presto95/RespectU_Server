@@ -10,7 +10,7 @@ function upload(req, res) {
     const button6 = body.button6
     const button8 = body.button8
     const perfectPlay = body.perfectPlay
-    Ranking.find({}, (err, results) => {
+    Ranking.find({}, { "_id": false }, (err, results) => {
         if(err) {
             return res.status(400).json({ error: "unknown error" })
         }
@@ -44,7 +44,7 @@ function upload(req, res) {
 
 //READ
 function read(req, res) {
-    Ranking.find({}, (err, results) => {
+    Ranking.find({},{ "_id": false }, (err, results) => {
         if(err) {
             return res.status(400).json({ error: "unknown error" })
         }

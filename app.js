@@ -10,7 +10,7 @@ app.use("/users", require("./api/user/router"))
 app.use("/rankings", require("./api/ranking/router"))
 app.use("/playlists", require("./api/user/playlist/router"))
 //가져오기만 하는 데이터
-app.use("/songs", require("./data/achievement/router"))
+app.use("/songs", require("./data/song/router"))
 app.use("/missions", require("./data/mission/router"))
 app.use("/trophies", require("./data/trophy/router"))
 app.use("/achievements", require("./data/achievement/router"))

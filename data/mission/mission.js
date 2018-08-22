@@ -2,7 +2,7 @@ const mongoose = require("mongoose")
 
 const languageSchema = new mongoose.Schema({
     english: { type: String, default: "" },
-    korean: { type: String, default: "" }
+    korean: String
 })
 
 const stageSchema = new mongoose.Schema({
