@@ -6,15 +6,15 @@ const database = require("./database")
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
 //유저정보, 성과기록 / 랭킹 / 플레이리스트
-app.use("/user", require("./api/user/router"))
-app.use("/ranking", require("./api/ranking/router"))
-app.use("/playlist", require("./api/user/playlist/router"))
+app.use("/users", require("./api/user/router"))
+app.use("/rankings", require("./api/ranking/router"))
+app.use("/playlists", require("./api/user/playlist/router"))
 //가져오기만 하는 데이터
-app.use("/song", require("./data/achievement/router"))
-app.use("/mission", require("./data/mission/router"))
-app.use("/trophy", require("./data/trophy/router"))
-app.use("/achievement", require("./data/achievement/router"))
-app.use("/tip", require("./data/tip/router"))
+app.use("/songs", require("./data/achievement/router"))
+app.use("/missions", require("./data/mission/router"))
+app.use("/trophies", require("./data/trophy/router"))
+app.use("/achievements", require("./data/achievement/router"))
+app.use("/tips", require("./data/tip/router"))
 
 app.listen(3000, () => {
     database()
