@@ -8,7 +8,7 @@ app.use(bodyParser.urlencoded({ extended: true }))
 //유저정보, 성과기록 / 랭킹 / 플레이리스트
 app.use("/users", require("./api/user/router"))
 app.use("/rankings", require("./api/ranking/router"))
-app.use("/playlists", require("./api/user/playlist/router"))
+app.use("/favorites", require("./api/user/favorite/router"))
 //가져오기만 하는 데이터
 app.use("/songs", require("./data/song/router"))
 app.use("/missions", require("./data/mission/router"))

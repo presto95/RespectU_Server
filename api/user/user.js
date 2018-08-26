@@ -1,6 +1,6 @@
 const mongoose = require("mongoose")
 
-const playlistSchema = new mongoose.Schema({
+const favoriteSchema = new mongoose.Schema({
     title: { type: String, required: true, unique: true }
 }, {
     versionKey: false
@@ -47,7 +47,7 @@ const schema = new mongoose.Schema({
     uid: { type: String, required: true, unique: true },
     nickname: { type: String, required: true },
     password: { type: String, required: true },
-    playlist: [playlistSchema],
+    favorite: [favoriteSchema],
     record: [recordSchema]
 }, {
     versionKey: false

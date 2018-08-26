@@ -19,7 +19,7 @@ const schema = new mongoose.Schema({
     series: { type: String, required: true },
     composer: { type: String, required: true },
     bpm: { type: Number, required: true },
-    subBpm: { type: Number, default: 0 },
+    subBpm: Number,
     button4: { type: buttonSchema, required: true },
     button5: { type: buttonSchema, required: true },
     button6: { type: buttonSchema, required: true },

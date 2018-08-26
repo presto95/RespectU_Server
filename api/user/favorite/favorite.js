@@ -22,4 +22,4 @@ const schema = new mongoose.Schema({
     versionKey: false
 })
 
-module.exports = mongoose.model("playlist", schema)
+module.exports = mongoose.model("favorite", schema)

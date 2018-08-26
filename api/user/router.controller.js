@@ -19,20 +19,20 @@ function read(req, res) {
 }
 
 //사용자의 플레이리스트 가져옴
-function readPlaylist(req, res) {
+function readFavorite(req, res) {
     const uid = req.params.uid
 
 }
 
 //사용자의 플레이리스트 업데이트
-function uploadPlaylist(req, res) {
+function uploadFavorite(req, res) {
     User.find({ uid }, (err, results) => {
 
     })
 }
 
 //사용자의 플레이리스트 삭제
-function deletePlaylist(req, res) {
+function deleteFavorite(req, res) {
 
 }
 
@@ -51,4 +51,4 @@ function uploadNickname(req, res) {
 
 }
 
-module.exports = { read, readPlaylist, uploadPlaylist, deletePlaylist, readRecord, uploadRecord, uploadNickname }
+module.exports = { read, readFavorite, uploadFavorite, deleteFavorite, readRecord, uploadRecord, uploadNickname }

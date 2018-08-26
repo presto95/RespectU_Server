@@ -1,11 +1,11 @@
-const Playlist = require("./playlist")
+const Favorite = require("./favorite")
 
 //CREATE
 function create(req, res) {
     const body = req.body
     const uid = body.uid
     const title = body.title
-    Playlist.findOne({ uid, title }, (err, playlist) => {
+    Favorite.findOne({ uid, title }, (err, playlist) => {
         if(err) {
             return res.status(400).json({ error: "unknown error" })
         }
@@ -45,7 +45,7 @@ function create(req, res) {
 //READ
 function read(req, res) {
     const uid = req.params.uid
-    Playlist.find({ uid }, (err, results) => {
+    Favorite.find({ uid }, (err, results) => {
         if(err) {
             return res.status(400).json({ error: "unknown error" })
         }
@@ -60,7 +60,7 @@ function remove(req, res) {
     const body = req.body
     const uid = body.uid
     const title = body.title
-    Playlist.remove({ uid, title }, err => {
+    Favorite.remove({ uid, title }, err => {
         if(err) {
             return res.status(400).json({ error: "unknown error" })
         }
