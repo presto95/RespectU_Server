@@ -1,14 +1,16 @@
 const express = require("express")
 const bodyParser = require("body-parser")
+const path = require("path")
 const app = express()
 const database = require("./database")
 
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({ extended: true }))
-//유저정보, 성과기록 / 랭킹 / 플레이리스트
+//정적 이미지 폴더
+app.use(express.static(path.join(__dirname, "public")))
+//유저정보, 성과기록 / 랭킹
 app.use("/users", require("./api/user/router"))
 app.use("/rankings", require("./api/ranking/router"))
-app.use("/favorites", require("./api/user/favorite/router"))
 //가져오기만 하는 데이터
 app.use("/songs", require("./data/song/router"))
 app.use("/missions", require("./data/mission/router"))

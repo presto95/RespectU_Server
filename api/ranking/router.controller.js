@@ -49,7 +49,7 @@ function read(req, res) {
             return res.status(400).json({ error: "unknown error" })
         }
         if(results) {
-            return res.json(results)
+            return res.status(200).json({ ranking: results })
         } 
     })
 }

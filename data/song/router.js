@@ -4,5 +4,6 @@ const controller = require("./router.controller")
 
 router.get("/", controller.read)
 router.get("/:series", controller.readBySeries)
+//router.get("/:")
 
 module.exports = router

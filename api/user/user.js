@@ -1,11 +1,5 @@
 const mongoose = require("mongoose")
 
-const favoriteSchema = new mongoose.Schema({
-    title: { type: String, required: true, unique: true }
-}, {
-    versionKey: false
-})
-
 const languageSchema = new mongoose.Schema({
     english: { type: String, required: true },
     korean: { type: String, required: true }
@@ -47,7 +41,6 @@ const schema = new mongoose.Schema({
     uid: { type: String, required: true, unique: true },
     nickname: { type: String, required: true },
     password: { type: String, required: true },
-    favorite: [favoriteSchema],
     record: [recordSchema]
 }, {
     versionKey: false
