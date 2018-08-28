@@ -1,49 +1,20 @@
 const mongoose = require("mongoose")
 
-const languageSchema = new mongoose.Schema({
-    english: { type: String, required: true },
-    korean: { type: String, required: true }
-})
-
-const difficultySchema = new mongoose.Schema({
-    rank: { type: String, default: "" },
-    rate: { type: Number, default: 0, min: 0, max: 100 },
-    note: { type: String, default: "" },
-}, {
-    versionKey: false
-})
-
-const buttonSchema = new mongoose.Schema({
-    normal: difficultySchema,
-    hard: difficultySchema,
-    maximum: difficultySchema,
-    skillPoint: { type: Number, default: 0 },
-    highestSkillPointLevel: { type: Number, default: 0 },
-    highestSkillPointRate: { type: Number, default: 0 },
-    highestSkillPointNote: { type: String, default: "" }
-}, {
-    versionKey: false
-})
-
-const recordSchema = new mongoose.Schema({
-    title: languageSchema,
-    lowercase: { type: String, required: true },
-    series: { type: String, required: true },
-    button4: buttonSchema,
-    button5: buttonSchema,
-    button6: buttonSchema,
-    button8: buttonSchema
-}, {
-    versionKey: false
-})
-
 const schema = new mongoose.Schema({
     uid: { type: String, required: true, unique: true },
-    nickname: { type: String, required: true },
-    password: { type: String, required: true },
-    record: [recordSchema]
+    nickname: String,
+    identifier: { type: String, required: true, unique: true },
+    password: { type: String, required: true }
 }, {
     versionKey: false
 })
+
+schema.methods.comparePassword = function(password, callback) {
+    if(password === this.password) {
+        callback(null, true)
+    } else {
+        callback("error")
+    }
+}
 
 module.exports = mongoose.model("user", schema)

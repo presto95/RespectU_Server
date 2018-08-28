@@ -1,36 +1,18 @@
+const passport = require("passport")
 const User = require("./user")
 
-//사용자가 생성되어 있는지 확인만 함
-function read(req, res) {
-    const uid = req.params.uid
-    User.find({ uid }, (err, users) => {
-        if(err) {
-            res.status(400).json({ error: "unknown error" })
-        }
-        const length = users.length
-        if(length === 0) {
-            return res.status(404).json({ error: "no user" })
-        } else if(length === 1) {
-            return res.status(200)
-        } else {
-            return res.status(400).json({ error: "duplicated user" })
-        }
-    })
-}
-
-//사용자의 성과 기록 가져옴
-function readRecord(req, res) {
+//사용자 생성
+function create(req, res) {
 
 }
 
-//사용자의 성과 기록 업데이트
-function uploadRecord(req, res) {
+function login(req, res) {
 
 }
 
 //사용자의 닉네임(아이디) 업데이트
-function uploadNickname(req, res) {
+function updateNickname(req, res) {
 
 }
 
-module.exports = { read, readRecord, uploadRecord, uploadNickname }
+module.exports = { create, login, updateNickname }

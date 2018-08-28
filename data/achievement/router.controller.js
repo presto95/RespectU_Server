@@ -7,7 +7,7 @@ function read(req, res) {
             return res.status(400).json({ error: "unknown error" })
         }
         if(achievements) {
-            return res.status(200).json({ achievement: achievements })
+            return res.status(200).json({ achievements: achievements })
         }
         return res.status(404).json({ error: "no data" })
     })
@@ -20,7 +20,7 @@ function readByType(req, res) {
             return res.status(400).json({ error: "unknown error" })
         }
         if(achievements) {
-            return res.status(200).json({ achievement: achievements })
+            return res.status(200).json({ achievements: achievements })
         }
         return res.status(404).json({ error: "no data" })
     })
@@ -40,7 +40,7 @@ function readByItem(req, res) {
             return res.status(400).json({ error: "unknown error "})
         }
         if(achievements) {
-            return res.status(200).json({ achievement: achievements })
+            return res.status(200).json({ achievements: achievements })
         }
         return res.status(404).json({ error: "no data" })
     })

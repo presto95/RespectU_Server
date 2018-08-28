@@ -7,7 +7,7 @@ function read(req, res) {
             return res.status(400).json({ error: "unknown error" })
         }
         if(songs) {
-            return res.status(200).json({ song: songs })
+            return res.status(200).json({ songs: songs })
         }
         return res.status(404).json({ error: "no data" })
     })
@@ -20,7 +20,7 @@ function readBySeries(req, res) {
             return res.status(400).json({ error: "unknown error" })
         }
         if(songs) {
-            return res.status(200).json({ song: songs })
+            return res.status(200).json({ songs: songs })
         }
         return res.status(404).json({ error: "no data" })
     })

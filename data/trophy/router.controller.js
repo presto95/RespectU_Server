@@ -8,7 +8,7 @@ function read(req, res) {
             return res.status(400).json({ error: "unknown error "})
         }
         if(trophies) {
-            return res.status(200).json({ trophy: trophies })
+            return res.status(200).json({ trophies: trophies })
         }
         return res.status(400).json({ error: "no data" })
     })

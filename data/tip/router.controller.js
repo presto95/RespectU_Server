@@ -6,7 +6,7 @@ function read(req, res) {
             return res.status(400).json({ error: "unknown error" })
         }
         if(tips) {
-            return res.status(200).json({ tip: tips })
+            return res.status(200).json({ tips: tips })
         }
         return res.status(404).json({ error: "no data" })
     })

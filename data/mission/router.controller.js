@@ -8,7 +8,7 @@ function read(req, res) {
             return res.status(400).json({ error: "unknown error" })
         }
         if(missions) {
-            return res.status(200).json({ mission: missions })
+            return res.status(200).json({ missions: missions })
         }
         return res.status(404).json({ error: "no data" })
     }) 
@@ -29,7 +29,7 @@ function readByReward(req, res) {
             return res.status(400).json({ error: "unknown error" })
         }
         if(missions) {
-            return res.status(200).json({ mission: missions })
+            return res.status(200).json({ missions: missions })
         }
         return res.status(404).json({ error: "no data" })
     })
