@@ -39,6 +39,7 @@ const recordSchema = new mongoose.Schema({
 
 const schema = new mongoose.Schema({
     uid: { type: String, required: true, unique: true },
+    id: { type: String, required: true, unique: true },
     records: [recordSchema]
 }, {
     versionKey: false

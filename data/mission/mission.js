@@ -24,12 +24,12 @@ const schema = new mongoose.Schema({
     break: { type: Number, default: 0 },
     effector: { type: String, default: "" },
     reward: languageSchema,
-    song1: stageSchema,
-    song2: stageSchema,
-    song3: stageSchema,
-    song4: stageSchema,
-    song5: stageSchema,
-    song6: stageSchema
+    stage1: stageSchema,
+    stage2: stageSchema,
+    stage3: stageSchema,
+    stage4: stageSchema,
+    stage5: stageSchema,
+    stage6: stageSchema
 }, {
     versionKey: false
 })

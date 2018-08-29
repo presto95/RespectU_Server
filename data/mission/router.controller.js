@@ -1,5 +1,5 @@
 const Mission = require("./mission")
-const projection = { "_id": false, "reward._id": false, "song1._id": false, "song2._id": false, "song3._id": false, "song4._id": false, "song5._id": false, "song6._id": false, "song1.title._id": false, "song2.title._id": false, "song3.title._id": false, "song4.title._id": false, "song5.title._id": false, "song6.title._id": false }
+const projection = { "_id": false, "reward._id": false, "stage1._id": false, "stage2._id": false, "stage3._id": false, "stage4._id": false, "stage5._id": false, "stage6._id": false, "stage1.title._id": false, "stage2.title._id": false, "stage3.title._id": false, "stage4.title._id": false, "stage5.title._id": false, "stage6.title._id": false }
 
 function read(req, res) {
     const series = req.params.series
