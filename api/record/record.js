@@ -20,6 +20,7 @@ const buttonSchema = new mongoose.Schema({
     normal: difficultySchema,
     hard: difficultySchema,
     maximum: difficultySchema,
+    highestSkillPoint: { type: Number, default: 0 },
     highestSkillPointDifficulty: { type: String, default: "" },
     highestSkillPointNote: { type: String, default: "" },
     highestSkillPointRate: { type: Number, default: 0, min: 0, max: 100 }
@@ -29,6 +30,7 @@ const buttonSchema = new mongoose.Schema({
 
 const recordSchema = new mongoose.Schema({
     title: languageSchema,
+    series: String,
     button4: buttonSchema,
     button5: buttonSchema,
     button6: buttonSchema,
