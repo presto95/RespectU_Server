@@ -19,7 +19,7 @@ app.use(passport.session())
 require("./api/auth/passport")()
 //정적 이미지 폴더
 app.use(express.static(path.join(__dirname, "public")))
-//유저
+//유저 관련
 app.use("/users", require("./api/auth/router"))
 //성과 기록
 app.use("/records", require("./api/record/router"))
