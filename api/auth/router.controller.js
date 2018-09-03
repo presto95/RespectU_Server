@@ -1,14 +1,17 @@
-const passport = require("passport")
 const User = require("./user")
 
 function login(req, res) {
-    passport.authenticate("local", {
-       failureFlash: false,
-       successFlash: false 
-    }, (req, res) => {
-        //인증 성공
-        console.log("login!")
-        res.sendStatus(200)
+    const body = req.body
+    const id = body.id
+    const password = body.password
+    User.findOne({ id, password }, { _id: false }, (err, user) => {
+        if(err) {
+            return res.sendStatus(400)
+        }
+        if(user) {
+            return res.sendStatus(200)
+        }
+        return res.sendStatus(404)
     })
 }
 
