@@ -10,8 +10,7 @@ const languageSchema = new mongoose.Schema({
 const difficultySchema = new mongoose.Schema({
     rank: { type: String, default: "" },
     rate: { type: Number, default: 0, min: 0, max: 100 },
-    note: { type: String, default: "" },
-    skillPoint: { type: Number, default: 0 }
+    note: { type: String, default: "" }
 }, {
     versionKey: false
 })
@@ -20,10 +19,10 @@ const buttonSchema = new mongoose.Schema({
     normal: difficultySchema,
     hard: difficultySchema,
     maximum: difficultySchema,
-    highestSkillPoint: { type: Number, default: 0 },
-    highestSkillPointDifficulty: { type: String, default: "" },
-    highestSkillPointNote: { type: String, default: "" },
-    highestSkillPointRate: { type: Number, default: 0, min: 0, max: 100 }
+    skillPoint: { type: Number, default: 0 },
+    skillPointDifficulty: { type: String, default: "" },
+    skillPointNote: { type: String, default: "" },
+    skillPointRate: { type: Number, default: 0, min: 0, max: 100 }
 }, {
     versionKey: false
 })
@@ -40,7 +39,6 @@ const recordSchema = new mongoose.Schema({
 })
 
 const schema = new mongoose.Schema({
-    uid: { type: String, required: true, unique: true },
     id: { type: String, required: true, unique: true },
     records: [recordSchema],
     perfectPlays: { type: Number, default: 0 }

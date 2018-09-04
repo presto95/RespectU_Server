@@ -36,4 +36,36 @@ function create(req, res) {
     })
 }
 
-module.exports = { login, create }
+function readNickname(req, res) {
+    const id = req.params.id
+    User.findOne({ id }, (err, user) => {
+        if(err) {
+            return res.sendStatus(400)
+        }
+        if(user) {
+            return res.status(200).json({ nickname: user.nickname })
+        }
+        return res.sendStatus(404)
+    })
+}
+
+function updateNickname(req, res) {
+    const nickname = req.body.nickname
+    const id = req.body.id
+    User.findOne({ id }, (err, user) => {
+        if(err) {
+            return res.sendStatus(400)
+        }
+        if(user) {
+            User.updateOne({ id }, { $set: { nickname }}, (err, raw) => {
+                if(err) {
+                    return res.sendStatus(400)
+                }
+                return res.status(201).json({ nickname })
+            })
+        }
+        return res.sendStatus(404)
+    })
+}
+
+module.exports = { login, create, readNickname, updateNickname }

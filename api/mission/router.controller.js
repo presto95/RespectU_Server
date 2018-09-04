@@ -26,25 +26,4 @@ function readBySeries(req, res) {
     }) 
 }
 
-function readByReward(req, res) {
-    const title = req.params.title
-    const query = {
-        $or: [{
-            "reward.english": `Music : ${title}`
-        }, {
-            "reward.korean": `Music : ${title}`
-        }
-        ]
-    }
-    Mission.find(query, projection, (err, missions) => {
-        if(err) {
-            return res.status(400).json({ error: "unknown error" })
-        }
-        if(missions) {
-            return res.status(200).json({ missions })
-        }
-        return res.status(404).json({ error: "no data" })
-    })
-}
-
-module.exports = { read, readBySeries, readByReward }
+module.exports = { read, readBySeries }
