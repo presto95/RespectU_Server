@@ -3,7 +3,7 @@
 
 #### RespectU: Guide for DJMAX RESPECT (Server)
 
-국산 리듬게임 [디제이맥스 리스펙트](https://www.djmaxrespect.com/#)의 가이드 애플리케이션 에 붙는 서버
+국산 리듬게임 [디제이맥스 리스펙트](https://www.djmaxrespect.com/#)의 [가이드 애플리케이션](https://github.com/presto95/RespectU_iOS) 에 붙는 서버
 
 
 
