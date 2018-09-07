@@ -35,7 +35,7 @@
 
 
 
-### 문서
+### API 문서
 
 [Github Wiki](https://github.com/presto95/RespectU_Server/wiki)
 
