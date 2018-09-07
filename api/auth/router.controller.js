@@ -1,10 +1,12 @@
+const crypto = require("crypto")
 const User = require("./user")
 
 function login(req, res) {
     const body = req.body
     const id = body.id
     const password = body.password
-    User.findOne({ id, password }, { _id: false }, (err, user) => {
+    const encrypted = crypto.createHash("sha256").update(password).digest("base64")
+    User.findOne({ id, password: encrypted }, { _id: false }, (err, user) => {
         if(err) {
             return res.sendStatus(400)
         }
@@ -23,7 +25,9 @@ function create(req, res) {
     const nickname = body.nickname
     User.find({ id }, (err, users) => {
         if(users.length === 0) {
-            const user = new User({ id, password, nickname })
+            //비밀번호 암호화
+            const encrypted = crypto.createHash("sha256").update(password).digest("base64")
+            const user = new User({ id, password: encrypted, nickname })
             user.save(err => {
                 if(err) {
                     res.sendStatus(400)
