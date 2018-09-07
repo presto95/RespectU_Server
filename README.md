@@ -35,6 +35,12 @@
 
 
 
+### 문서
+
+[Github Wiki](https://github.com/presto95/RespectU_Server/wiki)
+
+
+
 ### 의의
 
 - 첫 번째 백엔드 개발 / Node.js 사용 프로젝트
