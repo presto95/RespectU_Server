@@ -5,8 +5,8 @@ const session = require("express-session")
 const app = express()
 const database = require("./database")
 
-app.use(bodyParser.json())
-app.use(bodyParser.urlencoded({ extended: true }))
+app.use(bodyParser.json({ limit: "1mb" }))
+app.use(bodyParser.urlencoded({ limit: "1mb", extended: true }))
 //정적 이미지 폴더
 app.use(express.static(path.join(__dirname, "public")))
 app.use("/version", require("./api/version/router"))

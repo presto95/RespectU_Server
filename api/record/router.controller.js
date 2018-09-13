@@ -14,8 +14,13 @@ function readById(req, res) {
 }
 
 function upload(req, res) {
-    const id = req.body.id
-    Record.find({ id }, (err, records) => {
+    const body = req.body
+    const id = body.id
+    const records = body.records
+    let record = new Record({
+        id, records
+    })
+    record.save(err => {
         if(err) {
             return res.sendStatus(400)
         }

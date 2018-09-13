@@ -41,7 +41,6 @@ const recordSchema = new mongoose.Schema({
 const schema = new mongoose.Schema({
     id: { type: String, required: true, unique: true },
     records: [recordSchema],
-    perfectPlays: { type: Number, default: 0 }
 }, {
     versionKey: false
 })
