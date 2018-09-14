@@ -9,7 +9,8 @@ function readById(req, res) {
             return res.sendStatus(400)
         }
         if(records) {
-            return res.status(200).json({ records: records })
+            const record = records[0]
+            return res.status(200).json(record)
         }
         return res.sendStatus(404)
     })
