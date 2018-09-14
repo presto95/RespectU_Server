@@ -23,11 +23,30 @@ function upload(req, res) {
     let record = new Record({
         id, records
     })
-    record.save(err => {
+    Record.find({ id }, (err, records) => {
         if(err) {
             return res.sendStatus(400)
         }
-        return res.sendStatus(201)
+        if(records.length === 0) {
+            record.save(err => {
+                if(err) {
+                    return res.sendStatus(400)
+                }
+                return res.sendStatus(201)
+            })
+        } else {
+            Record.remove({ id }, err => {
+                if(err) {
+                    return res.sendStatus(400)
+                }
+                record.save(err => {
+                    if(err) {
+                        return res.sendStatus(400)
+                    }
+                    return res.sendStatus(201)
+                })
+            })
+        }
     })
 }
 
