@@ -16,19 +16,20 @@ function read(req, res) {
 function upload(req, res) {
     const body = req.body
     const id = body.id
+    const nickname = body.nickname
     const button4 = body.button4
     const button5 = body.button5
     const button6 = body.button6
     const button8 = body.button8
-    let ranking = new Ranking({
-        id, button4, button5, button6, button8
+    let ranking = new Ranking({ 
+        id, nickname, button4, button5, button6, button8
     })
     Ranking.find({ id }, (err, rankings) => {
         if(err) {
             return res.sendStatus(400)
         }
         if(rankings.length === 0) {
-            record.save(err => {
+            ranking.save(err => {
                 if(err) {
                     return res.sendStatus(400)
                 }
@@ -47,12 +48,6 @@ function upload(req, res) {
                 })
             })
         }
-    })
-    ranking.save(err => {
-        if(err) {
-            return res.sendStatus(400)
-        }
-        return res.sendStatus(201)
     })
 }
 
