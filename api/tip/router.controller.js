@@ -1,7 +1,8 @@
 const Tip = require("./tip")
+const projection = { "_id": false, "title._id": false }
 
 function read(req, res) {
-    Tip.find({}, { "_id": false, "title._id": false }, (err, tips) => {
+    Tip.find({}, projection, (err, tips) => {
         if(err) {
             return res.status(400).json({ error: "unknown error" })
         }
