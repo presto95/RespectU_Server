@@ -50,6 +50,24 @@
 
 ### 버전 기록
 
+**1.06**
+
+- DJMAX RESPECT 1.19에 대응
+  - 'What am I fighting for?' 난이도 수정
+
+**1.05**
+
+- TECHNIKA 2 DLC 미션 보상 정보 추가
+
+**1.04**
+
+- 'Electronics', 'Coastal Tempo' 음악 정보 추가
+
+**1.03**
+
+- DJMAX RESPECT 1.18에 대응
+  - TECHNIKA 2 DLC 데이터 추가
+
 **1.02**
 
 - '영원' 난이도 수정
